@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script>
+const Reg = () => {
+        alert('Registered!!');
+      }
+
+
+</script>
+<body>
+<header>
+    <h1>Portal Register</h1>
+</header>
+<main >
+<div class="form" style="opacity:0.5;">
+    <form method="post" action="/register" th:object="${registerRequest}" id="login_form" class="form_class" style="background-color:black;">
+        <h2 style="color:white;">Register</h2>
+        <div class="from_div">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input class="field_class" type="text" name="login" placeholder="Short ID" required>
+        </div>
+
+        <div class="from_div">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input class="field_class" type="email" name="email" placeholder="E-mail">
+        </div>
+
+        <div class="from_div">
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+            <input id="pass" class="field_class" type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="-Must contail atleast one upper and lowercase letter and atleast a number!" required>
+        </div>
+
+       <!-- <div class="from_div">
+            <input type="submit" name="Sign-In" value="Register">
+        </div> -->
+
+        <button class="submit_class" type="submit" form="login_form" onclick="return Reg()" style="align:left;">Register</button>
+<br>
+        <center> <a style="font-size:10px;border:none;color:white;background-color:black;font-weight:bolder;opacity:1;" href="/">Navigate to Home Page</a></center>
+
+    </form>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script>const validateLogin = () => {
+        alert('Logged In!!');
+      }</script>
+
+<body>
+<header>
+    <h1>Portal Login</h1>
+</header>
+<main >
+<div class="form" style="opacity:0.5;">
+    <form method="post" action="/login" th:object="${loginRequest}" id="login_form" class="form_class" style="background-color:black;">
+        <h2  style="color:white;">Login</h2>
+        <div class="from_div">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input class="field_class" type="text" name="login" placeholder="Short ID" required>
+        </div>
+
+        <div class="from_div">
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+            <input id="pass" class="field_class" type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="-Must contail atleast one upper and lowercase letter and atleast a number!" required>
+        </div>
+
+      <!--  <div class="from_div">
+            <input type="submit" name="Sign-In" value="Login">
+        </div> -->
+        <button class="submit_class" type="submit" form="login_form" onclick="return validaateLogin()" style="align:left;">Login</button>
+<br>
+       <center><span style="letter-spacing:1px; font-family: 'system-ui'; font-size:12px;color:white;">New user ?</span> <span><a style="font-size:10px;border:none;color:white;background-color:black;opacity:1;"href="/register">Register Here!</a></span></center>
+
+    </form>
+</div>
+</body>
+</main>
+</html>
